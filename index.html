@@ -1,0 +1,754 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>游戏WIKI</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="19e3ea53-ca54-80e0-8558-e266241069c8" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/rijksmuseum_jansz_1649.jpg" style="object-position:center 70%"/><h1 class="page-title" dir="auto">游戏WIKI</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><p id="19e3ea53-ca54-8013-a593-d3ace0c02ceb" class="block-color-gray">本游戏曾用名：Chronomancer 时间漫游者；此处为该游戏的所有设定汇总。</p></div><div style="display:contents" dir="auto"><div id="19e3ea53-ca54-80f6-94aa-c0f892ea85c7" class="column-list"><div style="display:contents" dir="auto"><div id="19e3ea53-ca54-8043-9ea1-db6cd4ea58e5" style="width:43.75%" class="column"><div style="display:contents" dir="auto"><h1 id="19e3ea53-ca54-80b6-baf1-f8d2ceac4849" class="">更新</h1></div><div style="display:contents" dir="ltr"><div id="2d73ea53-ca54-8065-b694-fba4720e8d1f" class="collection-content"><h4 class="collection-title">最新情报</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th></tr></thead><tbody><tr id="2d73ea53-ca54-8038-ac9e-dec3669efccf"><td class="cell-title"><a href="https://www.notion.so/2d73ea53ca548038ac9edec3669efccf?pvs=21">测试一下</a></td></tr></tbody></table></div><br/><br/></div></div></div></div><div style="display:contents" dir="auto"><div id="19e3ea53-ca54-8076-aab4-e68c8ea86505" style="width:56.25%" class="column"><div style="display:contents" dir="auto"><h1 id="19e3ea53-ca54-8027-9a68-c509c9e7b83a" class="">快速了解</h1></div><div style="display:contents" dir="auto"><h3 id="19e3ea53-ca54-80d1-920f-fbe0e92b4138" class=""><a href="https://www.notion.so/19e3ea53ca5480b6b49cf4f45f4f9a06?pvs=21">📜</a><mark class="highlight-yellow"><a href="https://www.notion.so/19e3ea53ca5480b6b49cf4f45f4f9a06?pvs=21">游戏单页说明书</a></mark></h3></div><div style="display:contents" dir="auto"><p id="19e3ea53-ca54-80c9-b55b-ccd564307da3" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="auto"><h1 id="1f93ea53-ca54-800c-9920-ca3b546b8eb3" class="">案例研究与分析</h1></div><div style="display:contents" dir="ltr"><div id="2d73ea53-ca54-80ca-835e-fb9b95f6d733" class="collection-content"><h4 class="collection-title"></h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="2d73ea53-ca54-80b0-ac70-e80cf5b41ab5"><td class="cell-title"><a href="https://www.notion.so/2d73ea53ca5480b0ac70e80cf5b41ab5?pvs=21">恶灵附身</a></td><td class="cell-hUm="><time>2025年12月28日 14:01</time></td><td class="cell-fnYu"></td></tr><tr id="2d73ea53-ca54-80d1-bede-dee6217b9c82"><td class="cell-title"><a href="https://www.notion.so/Idea-2d73ea53ca5480d1bededee6217b9c82?pvs=21">一些玩法Idea</a></td><td class="cell-hUm="><time>2025年12月28日 23:55</time></td><td class="cell-fnYu"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><h1 id="19e3ea53-ca54-8058-8ca4-e763d9118fec" class="">地理与历史</h1></div><div style="display:contents" dir="ltr"><div id="19e3ea53-ca54-80b7-9ec6-db7d05a95d07" class="collection-content"><h4 class="collection-title">时代</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="19e3ea53-ca54-8055-b8e6-c4f15ab7219f"><td class="cell-title"><a href="https://www.notion.so/A-D-1985-19e3ea53ca548055b8e6c4f15ab7219f?pvs=21">A.D. 1985</a></td><td class="cell-GFoR"><time>2025年2月18日 21:52</time></td><td class="cell-H^q^"></td></tr><tr id="19e3ea53-ca54-801a-8f09-d5d5fc603f8d"><td class="cell-title"><a href="https://www.notion.so/A-D-2086-19e3ea53ca54801a8f09d5d5fc603f8d?pvs=21">A.D. 2086</a></td><td class="cell-GFoR"><time>2025年2月18日 21:55</time></td><td class="cell-H^q^"></td></tr><tr id="19e3ea53-ca54-8006-9f35-d23623f2e837"><td class="cell-title"><a href="https://www.notion.so/19e3ea53ca5480069f35d23623f2e837?pvs=21">古代历史</a></td><td class="cell-GFoR"><time>2025年2月18日 21:55</time></td><td class="cell-H^q^"></td></tr><tr id="19e3ea53-ca54-80b4-984c-e9db57bf92a8"><td class="cell-title"><a href="https://www.notion.so/19e3ea53ca5480b4984ce9db57bf92a8?pvs=21">永恒宫</a></td><td class="cell-GFoR"><time>2025年2月18日 21:55</time></td><td class="cell-H^q^"></td></tr><tr id="19e3ea53-ca54-80d9-984d-d5b429807f8c"><td class="cell-title"><a href="https://www.notion.so/19e3ea53ca5480d9984dd5b429807f8c?pvs=21">无标题</a></td><td class="cell-GFoR"><time>2025年2月18日 21:56</time></td><td class="cell-H^q^"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><p id="1bf3ea53-ca54-8021-9df6-c1773f545a66" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="1bf3ea53-ca54-8004-93a4-d6cb82865f8e" class="">游戏剧情</h1></div><div style="display:contents" dir="ltr"><div id="1bf3ea53-ca54-8071-bd7b-f29fd0d2d37c" class="collection-content"><h4 class="collection-title">主线</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="1bf3ea53-ca54-80d3-960c-c2bc476c67a2"><td class="cell-title"><a href="https://www.notion.so/1bf3ea53ca5480d3960cc2bc476c67a2?pvs=21">故事的科幻理论和基调</a></td><td class="cell-}nl|"><time>2025年3月23日 16:52</time></td><td class="cell-:^&gt;h"></td></tr><tr id="31b3ea53-ca54-80d0-a6e0-dcfb40f2d3b3"><td class="cell-title"><a href="https://www.notion.so/31b3ea53ca5480d0a6e0dcfb40f2d3b3?pvs=21">综述</a></td><td class="cell-}nl|"><time>2026年3月6日 23:17</time></td><td class="cell-:^&gt;h"></td></tr><tr id="3063ea53-ca54-807d-9556-faef5a01824e"><td class="cell-title"><a href="https://www.notion.so/3063ea53ca54807d9556faef5a01824e?pvs=21">开场</a></td><td class="cell-}nl|"><time>2026年2月13日 13:10</time></td><td class="cell-:^&gt;h"></td></tr><tr id="3063ea53-ca54-8056-b244-f45f6242607f"><td class="cell-title"><a href="https://www.notion.so/3063ea53ca548056b244f45f6242607f?pvs=21">第一幕 优化版</a></td><td class="cell-}nl|"><time>2026年2月13日 15:05</time></td><td class="cell-:^&gt;h"></td></tr><tr id="c1b6c89d-ad11-4e27-9535-68ad324dac82"><td class="cell-title"><a href="https://www.notion.so/c1b6c89dad114e27953568ad324dac82?pvs=21"><span class="icon">📘</span>主线故事</a></td><td class="cell-}nl|"><time>2026年4月2日 19:54</time></td><td class="cell-:^&gt;h"></td></tr><tr id="e91219a1-9167-429d-bb54-15e46e291377"><td class="cell-title"><a href="https://www.notion.so/e91219a19167429dbb5415e46e291377?pvs=21"><span class="icon">📙</span>支线故事</a></td><td class="cell-}nl|"><time>2026年4月2日 19:54</time></td><td class="cell-:^&gt;h"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><p id="31c3ea53-ca54-8007-b262-fb781a81884c" class="">
+</p></div><div style="display:contents" dir="ltr"><div id="31c3ea53-ca54-80a2-9d1d-dc18801ecbbe" class="collection-content"><h4 class="collection-title">角色</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="31c3ea53-ca54-80d0-aecf-ff937d966dbe"><td class="cell-title"><a href="https://www.notion.so/31c3ea53ca5480d0aecfff937d966dbe?pvs=21">艾斯利·斯坦森</a></td><td class="cell-P|n@"><time>2026年3月8日 02:25</time></td><td class="cell-iWUw"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><h1 id="1bf3ea53-ca54-80c5-873c-efe70d36c5ef" class="">背景设定</h1></div><div style="display:contents" dir="auto"><h2 id="2b83ea53-ca54-80f0-bc89-e8ffa4451f71" class="">核心</h2></div><div style="display:contents" dir="ltr"><figure id="2b83ea53-ca54-80c9-9c37-f205893d6d13" class="link-to-page"><a href="https://www.notion.so/2b83ea53ca5480c99c37f205893d6d13?pvs=21">游戏剧情概述</a></figure></div><div style="display:contents" dir="auto"><div id="1f63ea53-ca54-80ff-8efb-f18253ac8d7b" class="column-list"><div style="display:contents" dir="auto"><div id="1f63ea53-ca54-807a-8b84-fdf8c4434c53" style="width:50%" class="column"><div style="display:contents" dir="ltr"><div id="1bf3ea53-ca54-80a4-bb3b-e73f7ba544c0" class="collection-content"><h4 class="collection-title">基础</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="1bf3ea53-ca54-80b7-a127-d1c2afbd9663"><td class="cell-title"><a href="https://www.notion.so/1bf3ea53ca5480b7a127d1c2afbd9663?pvs=21">游戏背景</a></td><td class="cell-rFGt"><time>2025年3月23日 17:17</time></td><td class="cell-HgiS"></td></tr><tr id="1bf3ea53-ca54-80f2-81be-e4268a86a6ef"><td class="cell-title"><a href="https://www.notion.so/1bf3ea53ca5480f281bee4268a86a6ef?pvs=21">磁暴线圈</a></td><td class="cell-rFGt"><time>2025年3月23日 18:10</time></td><td class="cell-HgiS"></td></tr><tr id="1c43ea53-ca54-8006-a812-d70c62f9d0fb"><td class="cell-title"><a href="https://www.notion.so/1c43ea53ca548006a812d70c62f9d0fb?pvs=21">时间殖民计划 —— 代号拉撒路</a></td><td class="cell-rFGt"><time>2025年3月28日 15:19</time></td><td class="cell-HgiS"></td></tr><tr id="1c43ea53-ca54-8086-8de4-d7521f709421"><td class="cell-title"><a href="https://www.notion.so/1c43ea53ca5480868de4d7521f709421?pvs=21">意识穿越项目 —— 代号回声</a></td><td class="cell-rFGt"><time>2025年3月28日 15:19</time></td><td class="cell-HgiS"></td></tr><tr id="1c43ea53-ca54-80a6-8376-d4eed7cff557"><td class="cell-title"><a href="https://www.notion.so/Envision-Group-Co-Ltd-EVN-1c43ea53ca5480a68376d4eed7cff557?pvs=21">Envision Group Co.Ltd（EVN易美讯集团）</a></td><td class="cell-rFGt"><time>2025年3月28日 15:20</time></td><td class="cell-HgiS"></td></tr><tr id="1f33ea53-ca54-8094-8cf4-e37a141356b3"><td class="cell-title"><a href="https://www.notion.so/1f33ea53ca5480948cf4e37a141356b3?pvs=21">时间的真相</a></td><td class="cell-rFGt"><time>2025年5月14日 18:42</time></td><td class="cell-HgiS"></td></tr><tr id="1f33ea53-ca54-8022-a1ca-cc1baba828d0"><td class="cell-title"><a href="https://www.notion.so/1f33ea53ca548022a1cacc1baba828d0?pvs=21">时间观察者</a></td><td class="cell-rFGt"><time>2025年5月14日 18:52</time></td><td class="cell-HgiS"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><p id="2943ea53-ca54-80e6-af43-c105e609c042" class="">
+</p></div></div></div><div style="display:contents" dir="auto"><div id="1f63ea53-ca54-800a-a7d8-f0310b90b07b" style="width:50%" class="column"><div style="display:contents" dir="ltr"><div id="1c43ea53-ca54-80bf-8c98-fb6c08f98e7a" class="collection-content"><h4 class="collection-title">深层设定</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="1c43ea53-ca54-8060-a9a9-f46f774b189d"><td class="cell-title"><a href="https://www.notion.so/1c43ea53ca548060a9a9f46f774b189d?pvs=21">时间橡皮筋效应</a></td><td class="cell-xNZ&gt;"><time>2025年3月28日 15:19</time></td><td class="cell-sGRk"></td></tr><tr id="1c43ea53-ca54-8007-9f50-e32f3ce4005b"><td class="cell-title"><a href="https://www.notion.so/11-78Hz-1c43ea53ca5480079f50e32f3ce4005b?pvs=21">11.78Hz共振器</a></td><td class="cell-xNZ&gt;"><time>2025年3月28日 17:19</time></td><td class="cell-sGRk"></td></tr><tr id="1f63ea53-ca54-80c2-afc4-f4a4ba6f754b"><td class="cell-title"><a href="https://www.notion.so/1f63ea53ca5480c2afc4f4a4ba6f754b?pvs=21">无标题</a></td><td class="cell-xNZ&gt;"><time>2025年5月17日 21:26</time></td><td class="cell-sGRk"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><p id="2943ea53-ca54-8015-8179-dedc850fa441" class="">
+</p></div></div></div></div></div><div style="display:contents" dir="ltr"><div id="1f63ea53-ca54-8099-bcda-e56fd139e291" class="collection-content"><h4 class="collection-title">游戏机制</h4><div class="collection-content-wrapper"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><img src="https://www.notion.so/icons/font_gray.svg" style="width:14px;height:14px;display:block"/></span>名称</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/clock_gray.svg" style="width:14px;height:14px;display:block"/></span>创建时间</th><th><span class="icon property-icon"><img src="https://www.notion.so/icons/list_gray.svg" style="width:14px;height:14px;display:block"/></span>标签</th></tr></thead><tbody><tr id="1f63ea53-ca54-8038-913f-d95b71aac321"><td class="cell-title"><a href="https://www.notion.so/1f63ea53ca548038913fd95b71aac321?pvs=21">时间穿越 - 核心玩法概述</a></td><td class="cell-KuN@"><time>2025年5月17日 21:27</time></td><td class="cell-QcT;"></td></tr><tr id="1f63ea53-ca54-8034-aafa-cde3e439c788"><td class="cell-title"><a href="https://www.notion.so/1f63ea53ca548034aafacde3e439c788?pvs=21">时间穿越 - 磁暴线圈</a></td><td class="cell-KuN@"><time>2025年5月17日 21:33</time></td><td class="cell-QcT;"></td></tr><tr id="1f63ea53-ca54-8029-b29b-c978ef5de586"><td class="cell-title"><a href="https://www.notion.so/1f63ea53ca548029b29bc978ef5de586?pvs=21">存档点 - 磁暴节点站</a></td><td class="cell-KuN@"><time>2025年5月17日 21:28</time></td><td class="cell-QcT;"></td></tr><tr id="2a43ea53-ca54-808a-b027-ef2df442dbe1"><td class="cell-title"><a href="https://www.notion.so/2a43ea53ca54808ab027ef2df442dbe1?pvs=21">武器技能脑爆</a></td><td class="cell-KuN@"><time>2025年11月7日 23:57</time></td><td class="cell-QcT;"></td></tr></tbody></table></div><br/><br/></div></div><div style="display:contents" dir="auto"><p id="1f63ea53-ca54-80c4-9029-e402969e0e44" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1f63ea53-ca54-8039-8d00-dbb9318d2fb6" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1fe3ea53-ca54-80fd-ac21-ebe018621e99" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1bf3ea53-ca54-802c-b8f0-f2cae9260f85" class="">
+</p></div><div style="display:contents" dir="auto"><h1 id="1ab3ea53-ca54-8047-9844-d6a6ef54e6a0" class="">游戏框架</h1></div><div style="display:contents" dir="ltr"><figure id="1ac3ea53-ca54-801f-9432-c0db44881e01" class="link-to-page"><a href="https://www.notion.so/1ac3ea53ca54801f9432c0db44881e01?pvs=21"><span class="icon">🧠</span>游戏技术文档</a></figure></div><div style="display:contents" dir="auto"><p id="1f63ea53-ca54-8075-96dd-f98cc48c224b" class="">
+</p></div><div style="display:contents" dir="auto"><p id="1ad3ea53-ca54-80ea-a3a5-dfa93afc461e" class="">
+</p></div><div style="display:contents" dir="ltr"><figure id="2ee3ea53-ca54-80ad-985a-efdfa9976b9d" class="link-to-page"><a href="https://www.notion.so/2ee3ea53ca5480ad985aefdfa9976b9d?pvs=21"><span class="icon">📁</span>已购素材</a></figure></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
